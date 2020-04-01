@@ -1,0 +1,229 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 0.9 (2020-04-01)
+%
+% Original authors:
+% Frits Wenneker (http://www.howtotex.com) and
+% Vel (vel@LaTeXTemplates.com) from http://www.LaTeXTemplates.com
+%
+% Modified by Nils Siegle
+%
+% License:
+% CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PAPER SETUP
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\mytitle}{Paper Title} % Paper Title
+\newcommand*{\myauthor}{Author(s)} % Paper Author
+\newcommand*{\mydate}{May 2020} % Publication Date
+\newcommand*{\myorg}{Journal of Paper Writing} % Organization, Journal, Subject this paper was published in
+
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template 
+
+% ------- FONTS -------
+\usepackage[sc]{mathpazo} % Use the Palatino font
+\usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
+\linespread{1.05} % Line spacing - Palatino needs more space between lines
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+
+\usepackage[english]{babel} % Language hyphenation and typographical rules
+
+% ------- DOCUMENT MARGINS -------
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{graphicx}
+
+\usepackage{lettrine} % The lettrine is the first enlarged letter at the beginning of the text
+
+% ------- LISTS -------
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+% ------- ABSTRACT -------
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+% ------- SECTION TITLES -------
+\usepackage{titlesec} % Allows customization of titles
+\renewcommand\thesection{\Roman{section}} % Roman numerals for the sections
+\renewcommand\thesubsection{\roman{subsection}} % roman numerals for subsections
+\titleformat{\section}[block]{\large\scshape\centering}{\thesection.}{1em}{} % Change the look of the section titles
+\titleformat{\subsection}[block]{\large}{\thesubsection.}{1em}{} % Change the look of the section titles
+
+% ------- HEADERS AND FOOTERS -------
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\fancyhead{} % Blank out the default header
+\fancyfoot{} % Blank out the default footer
+\fancyhead[C]{\mytitle\, $\bullet$ \mydate\, $\bullet$ \myorg} % Custom header text
+\fancyfoot[RO,LE]{\thepage} % Custom footer text
+
+\usepackage{titling} % Customizing the title section
+
+% ------- HYPERREF -------
+\usepackage{hyperref} % For hyperlinks in the PDF
+\AtBeginDocument{
+  \hypersetup{pdftitle={\mytitle}} % Set the PDF's title to your title
+  \hypersetup{pdfauthor={\myauthor}} % Set the PDF's author to your name
+  \hypersetup{hidelinks} % Prints all links black; comment out for default LaTeX behavior
+}
+
+% ------- BIBTEX -------
+\usepackage[backend=bibtex,style=numeric,citestyle=numeric,natbib=true]{biblatex}
+\addbibresource{sources.bib}
+
+\usepackage[autostyle=true]{csquotes}
+
+% ------- COLORS -------
+% Define colors for highlighting
+\usepackage{xcolor}
+\definecolor{lstbg}{gray}{0.95}
+\definecolor{lstComment}{RGB}{51, 102, 0}
+\definecolor{lstKey}{RGB}{0, 51, 204}
+\definecolor{lstStr}{RGB}{162, 43, 43}
+
+%------------------------------------------------
+%	CODE LISTINGS
+%------------------------------------------------
+\usepackage{listings}
+
+% Load required languages
+\lstloadlanguages{Python}
+
+% Styling
+\lstset{
+  showtabs=false,
+  showspaces=false,
+  showstringspaces=false,
+  basicstyle=\ttfamily,
+  numbers=left, numberstyle=\tiny,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true,
+  % prebreak={\\},
+  backgroundcolor=\color{lstbg},
+  commentstyle=\color{lstComment},
+  stringstyle=\color{lstStr},
+  keywordstyle=\color{lstKey},
+  literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {ß}{{\ss}}1
+}
+
+% Better highlighting for inline code
+\newcommand{\linecode}[1]{%
+  \colorbox{lstbg}{\textcolor{lstStr}{\textbf{\texttt{#1}}}}%
+}
+
+
+%------------------------------------------------
+%	ACRONYMS
+%------------------------------------------------
+\usepackage[nohyperlinks, printonlyused]{acronym} % Prints only used acronyms in overview
+\newacro{http}[HTTP]{Hypertext Transport Protocol}
+\newacro{https}[HTTPS]{Hypertext Transport Protocol Secure}
+\newacro{fido}[FIDO]{Fast Identity Online}
+\newacro{fido2}[FIDO2]{Fast Identity Online 2}
+% \newacro{id}[ABRV]{Abbreviation}
+
+% \acro{}[]{}
+% Use 
+% - \ac{id} for standard behavior
+% - \acs{id} for acronym
+% - \acl{id} for long version
+% - \acp{id} for plural (with 's' at the end)
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\Huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{\mytitle} % Article title
+\author{%
+  \textsc{Author 1} \\[1ex] % First author's name
+  \normalsize University 1 \\ % First author's institution
+  \normalsize \href{mailto:author@university.com}{author@university.com} % First author's email address
+  % \and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+  % \textsc{Author 2} \\[1ex] % Second author's name
+  % \normalsize University 2 \\ % Second author's institution
+  % \normalsize \href{mailto:author@university.com}{author@university.com} % Second author's email address
+}
+\date{\today} % Leave empty to omit a date
+\renewcommand{\maketitlehookd}{%
+
+%------------------------------------------------
+%	ABSTRACT
+%------------------------------------------------
+
+\begin{abstract}
+\noindent \blindtext
+\end{abstract}
+}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+% Section 1 - Introduction
+\input{Sections/section1.tex}
+
+%------------------------------------------------
+
+% Section 2 - Methods
+\input{Sections/section2.tex}
+
+%------------------------------------------------
+
+% Section 3 - Results
+\input{Sections/section3.tex}
+
+%------------------------------------------------
+
+% Section 4 - Discussion
+\input{Sections/section4.tex}
+
+% Single column layout for the rest of the paper
+\onecolumn
+
+%----------------------------------------------------------------------------------------
+%  BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+\printbibliography[heading=bibintoc]
+
+%------------------------------------------------
+
+% Section 5 - Appendix
+\input{Sections/section5.tex}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
