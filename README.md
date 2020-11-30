@@ -4,9 +4,16 @@ Easy-to-use LaTeX template for writing term papers, articles and other scientifi
 
 ## Features
 
+- Set up the document using custom commands at the top of `main.tex`
+- Coherent structure using separate files for the section, pre-configured for common paper outlines
+- BibTex templates for various sources in `example.bib`
 
 ## Usage
 
+1. Set paper title, author, date and organization
+2. If you have multiple authors, you have to manually add the others to the title section (`main.tex:160`)
+3. Fill in the sections (`Sections/section*.tex`) and appendix if needed
+4. Write your abstract in `main.tex:180`
 
 ## License
 

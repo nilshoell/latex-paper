@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Journal Article
 % LaTeX Template
-% Version 0.9.1 (2020-10-13)
+% Version 1.0.1 (2020-11-30)
 %
 % Original authors:
 % Frits Wenneker (http://www.howtotex.com) and
@@ -18,10 +18,11 @@
 %	PAPER SETUP
 %----------------------------------------------------------------------------------------
 
-\newcommand*{\mytitle}{Paper Title} % Paper Title
-\newcommand*{\myauthor}{Author(s)} % Paper Author
-\newcommand*{\mydate}{May 2020} % Publication Date
-\newcommand*{\myorg}{Journal of Paper Writing} % Organization, Journal, Subject this paper was published in
+\newcommand*{\mytitle}{Catchy Title} % Paper Title
+\newcommand*{\myauthor}{John Doe} % Paper Author
+\newcommand*{\mymail}{\href{mailto:author@university.com}{author@university.com}} % eMail address
+\newcommand*{\mydate}{January 2021} % Publication Date
+\newcommand*{\myorg}{University of Paper Writing} % Organization or University this paper was published in
 
 
 %----------------------------------------------------------------------------------------
@@ -162,15 +163,15 @@
 \posttitle{\end{center}} % Article title closing formatting
 \title{\mytitle} % Article title
 \author{%
-  \textsc{Author 1} \\[1ex] % First author's name
-  \normalsize University 1 \\ % First author's institution
-  \normalsize \href{mailto:author@university.com}{author@university.com} % First author's email address
+  \textsc{\myauthor} \\[1ex] % First author's name
+  \normalsize \myorg \\ % First author's institution
+  \normalsize \mymail % First author's email address
   % \and % Uncomment if 2 authors are required, duplicate these 4 lines if more
   % \textsc{Author 2} \\[1ex] % Second author's name
   % \normalsize University 2 \\ % Second author's institution
   % \normalsize \href{mailto:author@university.com}{author@university.com} % Second author's email address
 }
-\date{\today} % Leave empty to omit a date
+\date{\mydate} % Leave empty to omit a date
 \renewcommand{\maketitlehookd}{%
 
 %------------------------------------------------
@@ -198,18 +199,23 @@
 
 %------------------------------------------------
 
-% Section 2 - Methods
+% Section 2 - Foundations
 \input{Sections/section2.tex}
 
 %------------------------------------------------
 
-% Section 3 - Results
+% Section 3 - Methods
 \input{Sections/section3.tex}
 
 %------------------------------------------------
 
-% Section 4 - Discussion
+% Section 4 - Results
 \input{Sections/section4.tex}
+
+%------------------------------------------------
+
+% Section 5 - Discussion
+\input{Sections/section5.tex}
 
 % Single column layout for the rest of the paper
 \onecolumn
@@ -222,7 +228,7 @@
 %------------------------------------------------
 
 % Section 5 - Appendix
-\input{Sections/section5.tex}
+\input{Sections/appendix.tex}
 
 %----------------------------------------------------------------------------------------
 

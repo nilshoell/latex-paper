@@ -1,8 +1,9 @@
+# Editor config
 .vs/
 .vscode/
-*.pdf
+
+# LaTeX auxiliary files
 *.aux
-Sections/*.aux
 *.glo
 *.idx
 *.log
@@ -27,6 +28,10 @@ Sections/*.aux
 *.synctex.gz
 *.synctex
 *.fls
-main.fdb_latexmk
-main.run.xml
+*.fdb_latexmk
+*.run.xml
 *.lol
+*-blx.bib
+
+# Default PDF
+main.pdf
